@@ -1,0 +1,539 @@
+{
+  "LOGIN": {
+    "TITLE": "E-Commerce - Admin",
+    "TALENTCODE": "Tenant Code",
+    "EMAIL": "Email Id",
+    "PASSWORD": "Password",
+    "REMEMBERME": "Remember Me",
+    "FORGOTPASSWORD": "Forgot password?",
+    "LOG_IN": "Log In",
+    "CODEPLACEHOLDER": "EBC",
+    "EMAILPLACEHOLDER": "jhonsnow@gmail.com",
+    "PASSWORDPLACEHOLDER": "********* ",
+    "CAPTCHA": "Captcha",
+    "CAPTCHAPLACEHOLDER": "Enter Captcha"
+  },
+  "SIDEBAR": {
+    "DASHBOARD": "Dashboard",
+    "ADMIN": "Admin",
+    "STAFF": "Staff",
+    "USER": "User",
+    "ROLE": "Role",
+    "PRODUCTCATEGORY":"Product Category",
+    "COMPANY":"Company",
+    "TASK":"Task",
+    "TASK_MANAGEMENT":"Task Management",
+    "ANALYST_PRODUCT":"Analyst Product",
+    "PROCUR_ANALYST_PRODUCT":"Procurmenet Analyst Product",
+    "PROCUR_VENDORS":"Procurmenet Vendors",
+    "MARKETING":"Marketing",
+    "VENDORS":"Vendors/SPLR",
+    "PURCHASE_ORDER":"Purchase Order",
+    "PRODUCT":"Product",
+    "SALES_ORDER":"Sales Order",
+    "DELIVERY_PARTNER":"Delivery Partner",
+    "TENANT": "Tenant",
+    "BUSINESSUNIT": "Business Unit",
+    "EMPLOYEES": "Employees",
+    "CARDS": "Cards Management",
+    "CONNECTS": "Connects",
+    "MYCARDS": "My card",
+
+    "MARKET-ANALYSIS": "Market-Analysis",
+    "PRODUCT-MARKET": "Product",
+    "VENDORS-MARKET": "vendors",
+
+    "PROCURMENET": "Procurement",
+    "VENDORS-PRO": "vendors",
+    "PRODUCT-PRO": "product",
+
+    "INVENTORY": "Inventory",
+    "PRODUCT-INVE": "Product",
+    "CATEGORY-INVE": "category",
+
+    "MARKETINGSALES": "Marketing/sales",
+    "LEADSMARK": "Leads",
+    "TASKMARK": "Task",
+    "CAMPAIGNMARK": "Campaign",
+
+    "DISPATCH": "Dispatch",
+    "ORDERD": "Order",
+    "DELIVERYD": "Delivery",
+
+    "REPORTS":"Reports"
+
+  },
+  "DASHBOARD":{
+    "LICENSE":"License",
+    "STANDARD":"Standard",
+    "GOLD":"Gold",
+    "PLATINUM":"Platinum",
+    "AVAILABLE":"Available",
+    "USED":"Used",
+    "TOTAL":"Total"
+  },
+  "FORGOT_PASSWORD": {
+    "FORGOTPASSWORD": "Forgot Password",
+    "EMAILTAG": "Enter your registered mail id to send OTP",
+    "EMAIL": "Email ID",
+    "EMAILPLACEHOLDER": "jhonsnow@gmail.com",
+    "OTP": "Send OTP"
+  },
+  "RESETPASSWORD": {
+    "SETNEWPASSOWORD": "Set a New Password",
+    "MESSAGE": "Your New Password should contain atleast 6 characters",
+    "NEWPASSWORD": "New Password",
+    "CONFIRMPASSWORD": "Confirm Password",
+    "PLACEHOLDER": "*************",
+    "RESET_PASSWORD": "Reset Password"
+  },
+  "VERIFYOTP": {
+    "VERIFICATION": "Verification",
+    "MESSAGE": "Please Enter the OTP code sent to your Email ID",
+    "OTP": "OTP",
+    "VERIFY_OTP": "Verify OTP"
+  },
+  "PLAN": {
+    "HOME":"Home",
+    "ADDS":"Add",
+    "PLAN":"Product",
+    "PLAN_NAME": "Product Name",
+    "CATEGORY":"Category Name",
+    "CAT_DESC":"Category Description",
+    "NAME":"Name",
+    "DISCRIP":"Description",
+    "SUB_CATEGORY":"Sub category",
+    "ADDRESS":"Address",
+    "PLAN_PERMISSION":"Product permission",
+    "ROLE_PERMISSION":"Roll permission",
+    "PLAN_DESCPR":"Product Description",
+    "ACTION":"Action",
+    "PLAN_PRNM_CONFR":"Product Permission Configuration",
+    "FREE":"Free",
+    "STANDARD":"Standard",
+    "GOLD":"Gold",
+    "PLATINUM":"Platinum",
+    "MANAGER":"Manager",
+    "ADMINISTATOR":"Administator",
+    "SYSTEM_ANALYS":"System analyst",
+    "OTHER_STAFF":"Other staff",
+    "ADDRESS_NAME":"Address Name",
+    "ACTIVE":"Active",
+    "INACTIVE":"Inactive",
+    "EXPIRE":"Expire",
+    "ROLE":"Role",
+    "ROLE_NAME":"Role Name",
+    "ROLE_DESCPR":"Role Description",
+    "PERMISSION":"Permission",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "USER": {
+      "TITLE": "",
+      "TABLE": {
+        "NAME":"Name",
+        "User_ID": "Email",
+        "Role": "Role"
+    },
+    "ADD": {
+      "FORM": {
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name",
+        "E-MAIL": "Email",
+        "ROLE": "Role",
+        "PASSWORD": "Password"
+      }
+    }
+  },
+  "ROLE": {
+    "LIST": {
+      "TITLE": "",
+      "TABLE": {
+        "NAME":"Role Name",
+        "ROLE DESCRIPTION": "Role Description"
+      }
+    },
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "ROLE NAME": "Role Name",
+        "ROLE DESCRIPTION": "Role Description"
+      }
+    },
+    "PLACEHOLDER":{
+      "ROLE_NAME": "Admin",
+      "DESCRIPTION":"Description",
+      "ROLE_DESCRIPTION": "Informative job titles are more effective than general ones, so be precise by including key phrases that accurately describe the role."
+    }
+  },
+  "HOTEL": {
+      "TABLE": {
+        "HOTEL_NAME":"Company Name",
+        "EMAIL": "Email",
+        "COUNTRY": "Country",
+        "PLAN": "Plan"
+    },
+    "ADD": {
+      "FORM": {
+        "HOTEL_NAME": "Company Name",
+        "COMPANY_DOMAIN": "Company Domain",
+        "COMPANY__SUB_DOMAIN": "Company Subdomain",
+        "CATEGORY_ID":"Category Id",
+        "PRIMARY_CONTACT": "Primary Contact",
+        "PHONE_NO": "Phone No",
+        "DIAL_CODE": "Dial Code",
+        "COMPANY_CODE":"Company Code",
+        "TIME_FORMAT":"Time Format",
+        "DATE_FORMAT":"Date Format",
+        "TIME_ZONE":"Time Zone",
+        "SECONDARY_CONTACT": "Secondary Contact",
+        "PRIMARY_EMAIL": "primary Email",
+        "COMPANY_EMAIL": "Company Email",
+        "SECONDARY_EMAIL": "Secondary Email",
+        "ADDRESS": "Address",
+        "STREET_ADDRESS": "Street Address",
+        "LANGUAGE":"Language",
+        "PLAN": "Plan",
+        "LOGO": "Logo",
+        "COUNTRY": "Country",
+        "CURRENCY":"Currency",
+        "PINCODE":"Pincode",
+        "STATE":"State",
+        "CITY":"City",
+        "HOTEL_ADMIN_EMAIL": "Company Admin Email",
+        "HOTEL_ADMIN_PROFILE_PICTURE": "Company Admin Profile Picture",
+        "HOTEL_ADMIN_CONTACT": "Company Admin Contact"
+      }
+    }
+  },
+  "COMPANY": {
+    "TABLE": {
+      "HOTEL_NAME":"Company Name",
+      "EMAIL": "Email",
+      "COUNTRY": "Country",
+      "PLAN": "Plan"
+  },
+  "ADD": {
+    "FORM": {
+      "HOTEL_NAME": "Company Name",
+      "COMPANY_DOMAIN": "Company Domain",
+      "COMPANY__SUB_DOMAIN": "Company Subdomain",
+      "CATEGORY_ID":"Category Id",
+      "PRIMARY_CONTACT": "Primary Contact",
+      "PHONE_NO": "Phone No",
+      "DIAL_CODE": "Dial Code",
+      "COMPANY_CODE":"Company Code",
+      "TIME_FORMAT":"Time Format",
+      "DATE_FORMAT":"Date Format",
+      "TIME_ZONE":"Time Zone",
+      "SECONDARY_CONTACT": "Secondary Contact",
+      "PRIMARY_EMAIL": "primary Email",
+      "COMPANY_EMAIL": "Company Email",
+      "SECONDARY_EMAIL": "Secondary Email",
+      "ADDRESS": "Address",
+      "STREET_ADDRESS": "Street Address",
+      "LANGUAGE":"Language",
+      "PLAN": "Plan",
+      "LOGO": "Logo",
+      "COUNTRY": "Country",
+      "CURRENCY":"Currency",
+      "PINCODE":"Pincode",
+      "STATE":"State",
+      "CITY":"City",
+      "HOTEL_ADMIN_EMAIL": "Company Admin Email",
+      "HOTEL_ADMIN_PROFILE_PICTURE": "Company Admin Profile Picture",
+      "HOTEL_ADMIN_CONTACT": "Company Admin Contact"
+    }
+  }
+},
+  "COMMON": {
+    "HOME": "Home",
+    "VENDER_SECTION":"Vendor Section",
+    "COMPANY_SECTION":"Company Section",
+    "ADD": "Add",
+    "QUANTITY":" Quantity",
+    "VENDORS":"Venders",
+    "ACTION": "Action",
+    "IS_EDITING":"isEditing",
+    "UPDATED":"Update",
+    "PROFILE_PICTURE":"Profile Picture",
+    "COMPANY_DETAILS":"Company Details",
+    "COMPANY_DETAILS_ADMIN":"Company Admin Details",
+    "BREADCUM": {
+      "HOTEL": "company",
+      "USER":"User",
+      "ROLE":"Role"
+    },
+    "UPDATE": "update",
+    "BUTTON": {
+      "BACK": "Back",
+      "ADD": "Add",
+      "CANCEL": "Cancel",
+      "SAVE": "Save",
+      "DELETE": "Delete",
+      "OK":"Ok"
+    }
+  },
+  "COMPANY_ADMIN":{
+    "COMPANY_NAME":"First Name",
+    "LAST_NAME":"Last Name",
+    "COMPANY_ADMIN":"Company Admin Email"
+  },
+  "TASK": {
+    "HOME":"Home",
+    "NAME":"Name",
+    "TASK":"Task",
+    "TASK_NAME":"Task Name",
+    "TASK_DESCPR":"Task Description",
+    "TASK_TYPE":"Task Type",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "TASK_MANAGEMENT": {
+    "HOME":"Home",
+    "NAME":"Task Id",
+    "ASSIGN_USER_ID":"Assign User Id",
+    "TARGET":"Target",
+    "STATUS":"Status",
+    "DISCRIP":"Description",
+    "TASK":"Task Management",
+    "TASK_NAME":"Task Management name",
+    "TASK_DESCPR":"Task Management Description",
+    "TASK_TYPE":"Task Type",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "ANALYST_PRODUCT": {
+    "HOME":"Home",
+    "ASSIGN_USER_ID":"User",
+    "IMAGE":"Image",
+    "OTHER_IMAGE":"Other Image",
+    "QUANTITY":"Quantity",
+    "TOTAL_QUANTITY":"Total Quantity",
+    "SKU":"Sku",
+    "PRIZE":"Price",
+    "PRODUCT_CATEGORY_ID":"Product Category",
+    "PRODUCT_VENDOR_ID":"Product Vendor",
+    "TASK_MANAGEMENT_ID":"Task Management",
+    "STATUS":"Status",
+    "STATUS_UPDATED":"Status Updated By",
+    "DISCRIP":"Description",
+    "TASK":"Analyst Product",
+    "ANALYST_NAME":"Analyst name",
+    "ANALYST_PRODUCT_NAME":"Analyst Product",
+    "TASK_DESCPR":"Analyst Product Description",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "PROCURMENET_ANALYST_PRODUCT": {
+    "HOME":"Home",
+    "ASSIGN_USER_ID":"User",
+    "IMAGE":"Image",
+    "OTHER_IMAGE":"Other Image",
+    "QUANTITY":"Quantity",
+    "TOTAL_QUANTITY":"TOTAL Quantity",
+    "SKU":"Sku",
+    "PRIZE":"Price",
+    "PRODUCT_CATEGORY_ID":"Product Category",
+    "PRODUCT_VENDOR_ID":"Product Vendor",
+    "TASK_MANAGEMENT_ID":"Task Management",
+    "STATUS":"Status",
+    "STATUS_UPDATED":"Status Updated By",
+    "DISCRIP":"Description",
+    "TASK":"Analyst Product",
+    "ANALYST_NAME":"Procurmenet Analyst name",
+    "ANALYST_PRODUCT_NAME":"Procurmenet Analyst Product",
+    "TASK_DESCPR":"Analyst Product Description",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "MARKETING": {
+    "HOME":"Home",
+    "NAME": "Name",
+    "MARKETING":"Marketing",
+    "ASSIGN_USER_ID":"Assign User",
+    "STATUS":"Status",
+    "DISCRIP":"Description",
+    "TASK":"Task Management",
+    "TASK_NAME":"Task Management name",
+    "TASK_DESCPR":"Task Management Description",
+    "TASK_TYPE":"Task Type",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "VENDORS": {
+    "HOME":"Home",
+    "VENDORS_NAME": "Vendor Name",
+    "VENDORS":"Vendors",
+    "ASSIGN_USER_ID":"Assign User",
+    "STATUS":"Status",
+    "DISCRIP":"Description",
+    "ADDRESS":"Address",
+    "TASK":"Task Management",
+    "TASK_NAME":"Task Management Name",
+    "TASK_DESCPR":"Task Management Description",
+    "TASK_TYPE":"Task Type",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "PROCURMENETVENDORS": {
+    "HOME":"Home",
+    "VENDORS_NAME": "Procurmenet Vendor Name",
+    "VENDORS":"ProcurmenetVendors",
+    "ASSIGN_USER_ID":"Assign User",
+    "STATUS":"Status",
+    "DISCRIP":"Description",
+    "ADDRESS":"Address",
+    "TASK":"Task Management",
+    "TASK_NAME":"Task Management Name",
+    "TASK_DESCPR":"Task Management Description",
+    "TASK_TYPE":"Task Type",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "PURCHASE_ORDER": {
+    "HOME":"Home",
+    "PRODUCT_PRICE":"Product Price",
+    "ORDER_DETAILS":"Order Details",
+    "PRODUCT_DETAILS":"Product Details",
+    "PURCHASE_ORDER_NAME": "Purchase Order Name",
+    "PURCHASE_ORDER":"Purchase Order",
+    "STATUS":"Status",
+    "DISCRIP":"Description",
+    "ADDRESS":"Address",
+    "VENDOR_ID":"Vendors",
+    "DOCUMENT_IMAGE":"Document Images",
+    "PRICE":"Total Price",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "PRODUCT": {
+    "HOME":"Home",
+    "PRODUCT":"Product",
+    "SELECTED":"Selected Files",
+    "PRODUCT_NAME": "Product Name " ,
+    "STATUS":"Status",
+    "DISCRIP":"Description",
+    "QUANTITY":" Total Quantity",
+    "ADDRESS":"Address",
+    "VENDOR_ID":"Vendor Id",
+    "DOCUMENT_IMAGE":"Document Images",
+    "SECTION":"Quantity Assign To Company",
+    "SECTION_PRODUCT":"Product Details",
+    "SECTION_DOCUMENT":"Document Details",
+    "IMAGEFILES":"Document Files",
+    "COMPANY":"Company Name",
+    "PRICE":"Total Price",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "PRODUCT_CATEGORY": {
+    "HOME":"Home",
+    "CATEGORY":"Category",
+    "PRODUCT_NAME": "Product Name " ,
+    "STATUS":"Status",
+    "DISCRIP":"Description",
+    "QUANTITY":"Quantity",
+    "ADDRESS":"Address",
+    "VENDOR_ID":"Vendor Id",
+    "DOCUMENT_IMAGE":"Document Images",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "SALES_ORDER": {
+    "HOME":"Home",
+    "SALES_ORDER":"Sales Order",
+    "SALES_ORDER_NAME": "Name",
+    "PAYMENT_TYPE":"Payment Type",
+    "PAYMENT_GATEWAY_RESP":"Payment Gateway Responce",
+    "DELIVERY_PARTNER":"Delivery Partners",
+    "SHIPMENT_CHARGES":"Shipment Charges",
+    "STATUS":"Status",
+    "DISCRIP":"Description",
+    "QUANTITY":"Quantity",
+    "ADDRESS":"Address",
+    "VENDOR_ID":"Vendors",
+    "DOCUMENT_IMAGE":"Document Images",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  },
+  "DELIVERY_PARTNER": {
+    "HOME":"Home",
+    "DELIVERY_PARTNER":"Delivery Partner",
+    "DELIVERY_PARTNER_NAME": "DeliveryPartner Name",
+    "STATUS":"Status",
+    "DISCRIP":"Description",
+    "CHARGES_PRICE_RATE":"Charges Price Rate",
+    "QUANTITY":"Quantity",
+    "ADDRESS":"Address",
+    "VENDOR_ID":"Vendors",
+    "DOCUMENT_IMAGE":"Document Images",
+    "ADD": {
+      "TITLE": "",
+      "FORM": {
+        "NAME": "Name",
+        "DESCRIPTION": "DESCRIPTION"
+      }
+    }
+  }
+}

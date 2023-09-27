@@ -1,0 +1,453 @@
+<section class="side_container">
+  <div class="container-fluid">
+    <div class="main-page">
+      <div class="row 0">
+        <div class="col add-brdcmb">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a routerLink="/dashboard">{{ "COMMON.HOME" | translate }}</a>
+              </li>
+              <li
+                class="breadcrumb-item active"
+                routerLink="/company"
+                aria-current="page"
+              >
+                {{ "COMMON.BREADCUM.HOTEL" | translate }}
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                {{ isEditing ? "Update" : "Add" }}
+                {{ "COMMON.BREADCUM.HOTEL" | translate }}
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="main-div padding-x">
+        <div class="d-flex justify-content-between">
+          <h3 class="form-hadding">
+            {{ isEditing ? "Update" : "Add" }}
+            {{ "COMMON.BREADCUM.HOTEL" | translate }}
+          </h3>
+        </div>
+        <div class="d-flex justify-content-between">
+          <h3 class="form-hadding font-size18">
+            {{ "COMMON.COMPANY_DETAILS" | translate }}
+          </h3>
+        </div>
+        <form
+          [formGroup]="addForm"
+          (ngSubmit)="submitForm()"
+          class="pt-1 row justify-content-between"
+        >
+          <hr />
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.HOTEL_NAME" | translate }} <em>*</em></label
+            >
+            <div class="inpu-t">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  [formControl]="addForm.controls['name']"
+                  type="text"
+                  matInput
+                  placeholder="Ex : Grand Prime "
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.DIAL_CODE" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  [formControl]="addForm.controls['dailCode']"
+                  placeholder="Ex : 098645322"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.COMPANY_EMAIL" | translate }}
+              <em>*</em></label
+            >
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  type="text"
+                  [formControl]="addForm.controls['companyEmail']"
+                  placeholder="Ex : abc@gmail.com"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- TIME_FORMATE-->
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.TIME_FORMAT" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-select
+                 placeholder="Ex : 24 Hours"
+                  [formControl]="addForm.controls['timeFormat']"
+                >
+                  <mat-option
+                    *ngFor="let timeFormat of timeFormatList"
+                    [value]="timeFormat"
+                  >
+                    {{ timeFormat }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.COMPANY_CODE" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  [formControl]="addForm.controls['companyCode']"
+                  type="text"
+                  placeholder="Ex : 098645322"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- TIME_ZONE-->
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.TIME_ZONE" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-select
+                  placeholder="Ex : Japan Standard Time UTC +9"
+                  [formControl]="addForm.controls['timeZone']"
+                >
+                  <mat-option
+                    *ngFor="let timeZone of timeZoneList"
+                    [value]="timeZone"
+                  >
+                    {{ timeZone }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- DATE_FORMAT -->
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.DATE_FORMAT" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-select
+                  placeholder="Ex : MM/DD/YYYY"
+                  [formControl]="addForm.controls['dateFormat']"
+                >
+                  <mat-option
+                    *ngFor="let dateFormat of dateFormatList"
+                    [value]="dateFormat"
+                  >
+                    {{ dateFormat }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- COMPANY_DOMAIN -->
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">{{
+              "COMPANY.ADD.FORM.COMPANY_DOMAIN" | translate
+            }}</label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  [formControl]="addForm.controls['companyDomain']"
+                  placeholder="Ex : https://www.google.co.in/"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- COMPANY__SUB_DOMAIN -->
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">{{
+              "COMPANY.ADD.FORM.COMPANY__SUB_DOMAIN" | translate
+            }}</label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  [formControl]="addForm.controls['companySubdomain']"
+                  placeholder="Ex : https://www.google.co.in/"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- LANGUAGE-->
+          <!-- <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.LANGUAGE" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-select
+                  placeholder="Ex : Indian"
+                  [formControl]="addForm.controls['langauage']"
+                >
+                  <mat-option *ngFor="let lang of languageList" [value]="lang">
+                    {{ lang }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div> -->
+          <!-- LANGUAGE-->
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.LANGUAGE" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-select disableRipple [(ngModel)]="activeLang" 
+                [formControl]="addForm.controls['langauage']"
+                 (selectionChange)="onLanguageChange()">
+                  <mat-option *ngFor="let option of languageList" [value]="option?.code">
+                    {{ option?.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">{{
+              "COMPANY.ADD.FORM.STREET_ADDRESS" | translate
+            }}</label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  (keypress)="validateAddress($event)"
+                  [formControl]="addForm.controls['streetAddress']"
+                  placeholder=" Ex : 1/125, West avenue"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.PHONE_NO" | translate }} <em>*</em>
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  [formControl]="addForm.controls['phoneNumber']"
+                  type="number"
+                  placeholder="Ex : 098645322"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.CURRENCY" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  [formControl]="addForm.controls['currency']"
+                  type="text"
+                  matInput
+                  placeholder="Ex : Rupee "
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.COUNTRY" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  [formControl]="addForm.controls['country']"
+                  type="text"
+                  matInput
+                  placeholder="Ex : India "
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.STATE" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  [formControl]="addForm.controls['state']"
+                  type="text"
+                  matInput
+                  placeholder="Ex : Delhi "
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">
+              {{ "COMPANY.ADD.FORM.CITY" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  [formControl]="addForm.controls['city']"
+                  type="text"
+                  matInput
+                  placeholder="Ex : Agra "
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">Pincode</label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  [formControl]="addForm.controls['pinCode']"
+                  type="number"
+                  matInput
+                  placeholder="Ex : 132001 "
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label class="control-label">Status</label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  [formControl]="addForm.controls['status']"
+                  type="text"
+                  matInput
+                  placeholder="status"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between mt-4">
+            <h3 class="form-hadding">
+              {{ "COMMON.COMPANY_DETAILS_ADMIN" | translate }}
+            </h3>
+          </div>
+          <hr />
+          <div class="form-group w-45 input-fildcl">
+            <label for="lname" class="control-label">
+              {{ "COMPANY_ADMIN.COMPANY_NAME" | translate }} <em>*</em>
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  type="text"
+                  [formControl]="addForm.controls['firstName']"
+                  placeholder="firstName"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label for="lname" class="control-label">
+              {{ "COMPANY_ADMIN.LAST_NAME" | translate }} <em>*</em>
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  type="text"
+                  [formControl]="addForm.controls['lastName']"
+                  placeholder="lastName"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label for="lname" class="control-label">
+              {{ "COMPANY.ADD.FORM.HOTEL_ADMIN_EMAIL" | translate }} <em>*</em>
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  matInput
+                  type="text"
+                  [formControl]="addForm.controls['email']"
+                  placeholder="Ex : abc@email.com"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label for="lname" class="control-label">
+              {{ "COMPANY.ADD.FORM.HOTEL_ADMIN_PROFILE_PICTURE" | translate }}
+            </label>
+            <div class="">
+              <!-- <mat-form-field appearance="outline" class="w-100">
+                  <input matInput placeholder="Upload" type="file" [formControl]="addForm.controls['image']"/>
+                  <img class="upload-icon" src="assets/images/Upload.svg" />
+                </mat-form-field> -->
+
+              <mat-form-field
+                appearance="outline"
+                class="w-100"
+                (click)="fileInputProfile.click()"
+              >
+                <input
+                  [formControl]="addForm.controls['image']"
+                  matInput
+                  readonly
+                  placeholder="Upload"
+                />
+                <img class="upload-icon" src="assets/images/Upload.svg" />
+                <input
+                  hidden
+                  #fileInputProfile
+                  accept="image/x-png,image/jpeg"
+                  (change)="fileChangeEvent($event)"
+                  type="file"
+                  file-model="myFile"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end margin-y">
+            <button type="button" mat-raised-button routerBack>
+              {{ "COMMON.BUTTON.CANCEL" | translate }}
+            </button>
+            <!-- <button type="submit" [disabled]="!addForm.valid" mat-raised-button color="primary">{{'COMMON.BUTTON.SAVE' | translate}}</button> -->
+            <button type="submit" mat-raised-button color="primary">
+              {{ "COMMON.BUTTON.SAVE" | translate }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

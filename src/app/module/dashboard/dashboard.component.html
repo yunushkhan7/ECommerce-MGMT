@@ -1,0 +1,289 @@
+<div class="side_container">
+  <div class="container-fluid">
+    <div class="main-page">
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="row">
+
+              <div class="col-xs-12 col-md-6 col-lg-3 R-border">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto">
+                    <div class="icons bg-orang-light text-orang">
+                      <mat-icon>shopping_cart</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col mr-2">
+                    <div class="font-weight-bold mb-2 top-text">Orders Completed</div>
+                    <div class="mb-0 font-weight-bold bottum-text text-orang">1.264K</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-6 col-lg-3 R-border">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto">
+                    <div class="icons bg-blue-light text-blue">
+                      <mat-icon>swap_vert</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col mr-2">
+                    <div class="font-weight-bold mb-2 top-text">Total revenue made</div>
+                    <div class="mb-0 font-weight-bold bottum-text text-blue">$148K</div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xs-12 col-md-6 col-lg-3 R-border">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto">
+                    <div class="icons bg-syan-light text-syan">
+                      <mat-icon>person</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col mr-2">
+                    <div class="font-weight-bold mb-2 top-text">Total store visits</div>
+                    <div class="mb-0 font-weight-bold bottum-text text-syan">3.5M</div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xs-12 col-md-6 col-lg-3 padding15">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto">
+                    <div class="icons bg-red-light text-red">
+                      <mat-icon>pie_chart</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col mr-2">
+                    <div class="font-weight-bold mb-2 top-text">Total sales made</div>
+                    <div class="mb-0 font-weight-bold bottum-text text-red">52,763</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h4>Store visits</h4>
+                <h5>Details about your store visits</h5>
+              </div>
+              <i class="material-icons ng-scope text-red">bar_chart</i>
+            </div>
+            
+            <div >
+              <canvas baseChart
+                      chartType="line"
+                      [datasets]="chart.datasets"
+                      [labels]="chart.labels"
+                      [options]="chart.options"
+                      legend="true">
+              </canvas>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card">
+
+            <div class="card-header">
+              <div>
+                <h4>Store visits</h4>
+                <h5>Details about your store visits</h5>
+              </div>
+              <i class="material-icons ng-scope">more_vert</i>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center">
+
+              <div class="col card-div">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-auto">
+                    <div class="icons bg-syan-light text-syan">
+                      <mat-icon>people</mat-icon>
+                    </div>
+                  </div>
+                  <div class="col mr-2">
+                    <div class="font-weight-bold top-text">Pro Analytics</div>
+                    <div class="mb-0 font-weight-bold bottum-text text-syan">1.264K</div>
+                  </div>
+                </div>
+              </div>
+              <mat-icon class="text-syan">keyboard_arrow_right</mat-icon>
+            </div>
+
+            <div class="prog-bar">
+              <div class="d-flex justify-content-between">
+                <span>Men</span>
+                <span>30%</span>
+              </div>
+              <mat-progress-bar mode="determinate" value="30" color="warn"></mat-progress-bar>
+            </div>
+
+            <div class="prog-bar">
+              <div class="d-flex justify-content-between">
+                <span>women</span>
+                <span>70%</span>
+              </div>
+              <mat-progress-bar mode="determinate" value="70" color="primary"></mat-progress-bar>
+            </div>
+
+            <div class="prog-bar">
+              <div class="d-flex justify-content-between">
+                <span>visits/day</span>
+                <span>50%</span>
+              </div>
+              <mat-progress-bar mode="determinate" value="50" color="accent"></mat-progress-bar>
+            </div>
+
+            <div class="prog-bar">
+              <div class="d-flex justify-content-between">
+                <span>Customers</span>
+                <span>20%</span>
+              </div>
+              <mat-progress-bar mode="determinate" value="20" color="primary"></mat-progress-bar>
+            </div>
+
+            <div class="prog-bar">
+              <div class="d-flex justify-content-between">
+                <span>Products</span>
+                <span>40%</span>
+              </div>
+              <mat-progress-bar mode="determinate" value="40" color="accent"></mat-progress-bar>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card h100">
+
+            <div class="card-header">
+              <div>
+                <h4>Top Products</h4>
+                <h5>Details about your store visits</h5>
+              </div>
+              <a href=""><i class="material-icons ng-scope">more_vert</i></a>
+            </div>
+
+            <!--  -->
+            <div class="main-div overflow-x-mob">
+              <div class="admin-table w-200">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Product Name</th>
+                      <th scope="col">Date added</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Total Earning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Retina 5k Display</td>
+                      <td>December 12, 2020</td>
+                      <td>
+                        <span class="bg-color-span bg-red-light text-red">$1200</span>
+                      </td>
+                      <td>
+                        <span class="bg-color-span bg-syan-light text-syan">$17,987</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>Retina 5k Display</td>
+                      <td>December 12, 2020</td>
+                      <td>
+                        <span class="bg-color-span bg-red-light text-red">$1200</span>
+                      </td>
+                      <td>
+                        <span class="bg-color-span bg-syan-light text-syan">$17,987</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>Retina 5k Display</td>
+                      <td>December 12, 2020</td>
+                      <td>
+                        <span class="bg-color-span bg-red-light text-red">$1200</span>
+                      </td>
+                      <td>
+                        <span class="bg-color-span bg-syan-light text-syan">$17,987</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>Retina 5k Display</td>
+                      <td>December 12, 2020</td>
+                      <td>
+                        <span class="bg-color-span bg-red-light text-red">$1200</span>
+                      </td>
+                      <td>
+                        <span class="bg-color-span bg-syan-light text-syan">$17,987</span>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>Retina 5k Display</td>
+                      <td>December 12, 2020</td>
+                      <td>
+                        <span class="bg-color-span bg-red-light text-red">$1200</span>
+                      </td>
+                      <td>
+                        <span class="bg-color-span bg-syan-light text-syan">$17,987</span>
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card h100">
+
+            <div class="card-header">
+              <div>
+                <h4>Customers</h4>
+                <h5>Details about your store visits</h5>
+              </div>
+              <i class="material-icons ng-scope text-syan">pie_chart</i>
+            </div>
+
+            <div >
+              <canvas baseChart
+                      height="800" 
+                      width="600"
+                      chartType="doughnut"
+                      [datasets]="chartdoughnut.datasets"
+                      [labels]="chartdoughnut.labels"
+                      [options]="chartdoughnut.options"
+                      legend="true">
+              </canvas>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

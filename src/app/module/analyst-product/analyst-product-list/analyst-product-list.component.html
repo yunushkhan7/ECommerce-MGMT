@@ -1,0 +1,67 @@
+<div class="side_container">
+  <div class="container-fluid">
+    <div class="main-page">
+      <div class="row m-0 mt-3">
+        <div class="col admin-brdcmb mt-0">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="/dashboard">{{'PLAN.HOME' | translate}}</a></li>
+              <li class="breadcrumb-item active" routerLink="/address" aria-current="page">{{'ANALYST_PRODUCT.ANALYST_PRODUCT_NAME' | translate}}
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="row m-0">
+        <div class="w-30">
+          <search-box (text)="searchObject($event)" [placeholder]="'Search'"></search-box>
+        </div>
+        <div class="adbtn col" *ngIf="permissionObject?.add">
+          <button mat-raised-button routerLink="add" class="mr-5 add-button"><a>+ {{'COMMON.ADD' | translate}}</a></button>
+        </div>
+        <div class="col-lg-12 mt-3 px-sm-0">
+          <!--  -->
+          <div class="main-div">
+            <div class="admin-table">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">{{'ANALYST_PRODUCT.ANALYST_NAME' | translate}} <img (click)="sortData('name')" src="../../../../assets/images/filter2.png"></th>
+                    <th scope="col">{{'PLAN.PLAN_DESCPR' | translate}}</th>
+                    <th scope="col">{{'PLAN.ACTION' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="analystList?.length && permissionObject?.list">
+                  <tr *ngFor="let item of analystList">
+                    <td> 
+                      <img src="{{imageapi+item?.image}}"> 
+                      {{item?.name}}
+                    </td>
+                    <td class="line-clamp">{{item?.description}}</td>
+                    <td>
+                      <button class="btn btn-green text-success" *ngIf="permissionObject?.edit">
+                        <mat-icon  [routerLink]="['edit', item?._id]" role="img"
+                          class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true"
+                          data-mat-icon-type="font">edit</mat-icon>
+                      </button>
+                      <button (click)="onDelete(item)" class="btn btn-red text-danger" *ngIf="permissionObject?.delete">
+                        <mat-icon  role="img"
+                          class="mat-icon notranslate material-icons mat-icon-no-color" aria-hidden="true"
+                          data-mat-icon-type="font">delete</mat-icon>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-3">
+              <pagination [paginationList]="pagination" [selectedPageLimit]="currentPageLimit"
+                [currentPage]="currentPage" (onPageChange)="getPage($event)">
+              </pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,107 @@
+<section class="side_container">
+  <div class="container-fluid">
+    <div class="main-page">
+      <div class="row 0">
+        <div class="col add-brdcmb">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a routerLink="/dashboard">{{ "PLAN.HOME" | translate }}</a>
+              </li>
+              <li
+                class="breadcrumb-item active"
+                routerLink="/plan"
+                aria-current="page"
+              >
+                {{ "PRODUCT_CATEGORY.CATEGORY" | translate }}
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                {{ isEditing ? "Update" : "Add" }}
+                {{ "PRODUCT_CATEGORY.CATEGORY" | translate }}
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="main-div padding-x">
+        <div class="d-flex justify-content-between">
+          <h3 class="form-hadding">
+            {{ isEditing ? "Update" : "Add" }}
+            {{ "PRODUCT_CATEGORY.CATEGORY" | translate }}
+          </h3>
+        </div>
+        <form [formGroup]="addForm" (ngSubmit)="submitForm()" class="pt-3">
+          <div class="row pb-3 justify-content-between">
+            <div class="col-md-6">
+              <div class="form-group w-45 input-fildcl">
+                <label for="lname" class="control-label"
+                  >{{ "PLAN.NAME" | translate }} <em>*</em></label
+                >
+                <div class="inpu-t">
+                  <mat-form-field appearance="outline" class="w-100">
+                    <input
+                      [formControl]="addForm.controls['categoryName']"
+                      onlyCharacters
+                      matInput
+                      placeholder="Ex : Primary"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-group w-45 input-fildcl">
+                <label for="lname" class="control-label">
+                  {{ "PLAN.DISCRIP" | translate }}</label
+                >
+                <div class="inpu-t">
+                  <mat-form-field appearance="outline" class="w-100">
+                    <textarea
+                      placeholder="Description"
+                      [formControl]="addForm.controls['categoryDescription']"
+                      onlyCharacters
+                      matInput
+                    ></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="form-group w-45 input-fildcl">
+              <label for="lname" class="control-label">
+                {{ "PLAN.SUB_CATEGORY" | translate }}</label
+              >
+              <div class="inpu-t">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-select
+                    placeholder="Sub category"
+                    [(ngModel)]="selectedCategory"
+                    [formControl]="addForm.controls['subCategory']"
+                  >
+                    <mat-option
+                      *ngFor="let item of CategoryList"
+                      [value]="item?.subCategory"
+                    >
+                      {{ item?.categoryName }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end margin-y">
+            <button type="button" mat-raised-button routerBack>
+              {{ "COMMON.BUTTON.CANCEL" | translate }}
+            </button>
+            <button
+              type="submit"
+              [disabled]="!addForm.valid"
+              mat-raised-button
+              color="primary"
+            >
+              {{ "COMMON.BUTTON.SAVE" | translate }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <fullscreen-loading *ngIf="showLoader"></fullscreen-loading> -->

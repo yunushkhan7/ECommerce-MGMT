@@ -1,0 +1,458 @@
+<section class="side_container">
+  <div class="container-fluid">
+    <div class="main-page">
+      <div class="row 0">
+        <div class="col add-brdcmb">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a routerLink="/dashboard">{{ "PLAN.HOME" | translate }}</a>
+              </li>
+              <li
+                class="breadcrumb-item active"
+                routerLink="/plan"
+                aria-current="page"
+              >
+                {{ "SALES_ORDER.SALES_ORDER" | translate }}
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                {{ isEditing ? "Update" : "Add" }}
+                {{ "SALES_ORDER.SALES_ORDER" | translate }}
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="main-div padding-x">
+        <div class="d-flex justify-content-between">
+          <h3 class="form-hadding">
+            {{ isEditing ? "Update" : "Add" }}
+            {{ "SALES_ORDER.SALES_ORDER" | translate }}
+          </h3>
+        </div>
+        <form
+          [formGroup]="addForm"
+          (ngSubmit)="submitForm()"
+          class="pt-1 row justify-content-between"
+        >
+          <div class="form-group w-45 input-fildcl">
+            <label for="lname" class="control-label"
+              >{{ "PLAN.NAME" | translate }} <em>*</em></label
+            >
+            <div class="inpu-t">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  [formControl]="addForm.controls['name']"
+                  onlyCharacters
+                  matInput
+                  placeholder="Ex : Primary"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label for="lname" class="control-label"
+              >{{ "ANALYST_PRODUCT.PRIZE" | translate }}
+            </label>
+            <div class="inpu-t">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  [formControl]="addForm.controls['salesPrice']"
+                  type="number"
+                  matInput
+                  placeholder="Ex : 1"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <!-- <div class="form-group w-45  input-fildcl">
+              <label for="lname" class="control-label">{{'ANALYST_PRODUCT.STATUS' | translate}} </label>
+              <div class="inpu-t">
+                <mat-form-field appearance="outline" class="w-100">
+                  <input [formControl]="addForm.controls['planName']" onlyCharacters matInput
+                    placeholder="Ex : Status">
+                </mat-form-field>
+              </div>
+            </div> -->
+          <!-- <div class="form-group w-45  input-fildcl">
+              <label for="lname" class="control-label">{{'ANALYST_PRODUCT.STATUS_UPDATED' | translate}} </label>
+              <div class="inpu-t">
+                <mat-form-field appearance="outline" class="w-100">
+                  <input [formControl]="addForm.controls['statusUpdatedBy']"  matInput
+                    placeholder="Ex : Status">
+                </mat-form-field>
+              </div>
+            </div> -->
+          <div class="form-group w-45 input-fildcl">
+            <label for="lname" class="control-label">
+              {{ "SALES_ORDER.PAYMENT_TYPE" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field appearance="outline" class="w-100 payment-type">
+                <input
+                  [formControl]="addForm.controls['paymentType']"
+                  matInput
+                  placeholder="Ex : cash"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <!-- <div class="form-group w-45  input-fildcl">
+              <label for="lname" class="control-label">{{'SALES_ORDER.PAYMENT_GATEWAY_RESP' | translate}} </label>
+              <div class="inpu-t">
+                <mat-form-field appearance="outline" class="w-100">
+                  <input [formControl]="addForm.controls['paymentGatewayResponse']" onlyCharacters matInput
+                    placeholder="Ex : 1675322">
+                </mat-form-field>
+              </div>
+            </div> -->
+          <div class="form-group w-45 input-fildcl">
+            <label for="lname" class="control-label"
+              >{{ "SALES_ORDER.DELIVERY_PARTNER" | translate }}
+            </label>
+            <div class="inpu-t">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-select
+                  placeholder="Select"
+                  [(ngModel)]="selectedList"
+                  [formControl]="addForm.controls['deliveryPartnerId']"
+                >
+                  <mat-option
+                    *ngFor="let item of deliveryList"
+                    [value]="item?._id"
+                  >
+                    {{ item?.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label for="lname" class="control-label"
+              >{{ "SALES_ORDER.SHIPMENT_CHARGES" | translate }}
+            </label>
+            <div class="inpu-t">
+              <mat-form-field appearance="outline" class="w-100">
+                <input
+                  [formControl]="addForm.controls['shipmentCharges']"
+                  type="number"
+                  matInput
+                  placeholder="Ex : 100"
+                />
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <div class="inpu-t"></div>
+          </div>
+          <div class="form-group w-45 input-fildcl">
+            <label for="lname" class="control-label">
+              {{ "PURCHASE_ORDER.PRODUCT_DETAILS" | translate }}
+            </label>
+            <div class="">
+              <mat-form-field
+                appearance="outline"
+                class="w-100 sales-order-textarea"
+              >
+                <textarea
+                  rows="5"
+                  cols="50"
+                  [formControl]="addForm.controls['productDetails']"
+                  onlyCharacters
+                  matInput
+                  placeholder="{{ 'ROLE.PLACEHOLDER.DESCRIPTION' | translate }}"
+                >
+                </textarea>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <!-- <div class="d-flex justify-content-between">
+              <h3 class="form-hadding">
+                {{'PRODUCT.SECTION_DOCUMENT' | translate}}
+              </h3>
+            </div>
+            <hr />
+
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4 col-sm-12">
+                  <div class="form-group  input-fildcl">
+                    <label for="lname" class="control-label"> {{'PRODUCT.IMAGEFILES' | translate}} </label>
+                    <div class="">
+                      <mat-form-field appearance="outline" class="w-100 upload-input" (click)="fileInputProfile.click()">
+                        <input [formControl]="addForm.controls['image']" matInput readonly
+                        placeholder="{{ selectedFile  ? selectedFile.name  : 'upload'}}"/>
+                        <img class="upload-icon" src="assets/images/Upload.svg" />
+                        <input hidden  #attachments #fileInputProfile multiple="true" accept="image/x-png,image/jpeg" (change)="fileChangeEvent($event)"
+                          type="file" file-model="myFile" />
+                      </mat-form-field>
+
+                    </div>
+                   <div class="img-details">
+                    <div  class="img-inner-details" *ngFor="let selected of listOfFiles;let index = index">
+                      <h3>{{selected}}</h3>
+                      <mat-icon (click)="removeSelectedFile(index)">delete</mat-icon>
+                    </div>
+                   </div> &nbsp;
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <button type="button" class="btn btn-outline-success upload-button"
+                      (click)="addImageFiles(selectedFile)"> {{'COMMON.ADD' | translate}} </button>
+                </div>
+                </div>
+          </div> -->
+
+          <div class="d-flex justify-content-between">
+            <h3 class="form-hadding">
+              {{ "PRODUCT.SECTION_DOCUMENT" | translate }}
+            </h3>
+          </div>
+          <hr />
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-12">
+                <div class="form-group input-fildcl">
+                  <label for="lname" class="control-label">
+                    {{ "ANALYST_PRODUCT.IMAGE" | translate }}
+                  </label>
+                  <div class="">
+                    <mat-form-field
+                      appearance="outline"
+                      class="w-100"
+                      (click)="fileInputProfile.click()"
+                    >
+                      <input
+                        [formControl]="addForm.controls['productOtherImages']"
+                        matInput
+                        readonly
+                        placeholder="{{
+                          selectedFile ? selectedFile.name : 'upload'
+                        }}"
+                      />
+                      <img class="upload-icon" src="assets/images/Upload.svg" />
+                      <input
+                        hidden
+                        #fileInputProfile
+                        accept="image/x-png,image/jpeg"
+                        (change)="fileChange($event)"
+                        type="file"
+                        file-model="myFile"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-12">
+                <div class="form-group input-fildcl">
+                  <div class="adds-button">
+                    <button
+                      type="button"
+                      class="btn btn-outline-success"
+                      (click)="addFiles(selectedFile)"
+                    >
+                      add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 mt-3" *ngIf="purchaseimageList.length">
+            <div class="main-div">
+              <div class="admin-table">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">{{ "PRODUCT.SELECTED" | translate }}</th>
+                      <th scope="col">{{ "PLAN.ACTION" | translate }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let list of purchaseimageList; let i = index">
+                      <td>{{ list?.imagearray }}</td>
+                      <td>
+                        <button class="btn btn-red text-danger">
+                          <mat-icon
+                            role="img"
+                            class="mat-icon notranslate material-icons mat-icon-no-color"
+                            (click)="removeItemImage(i)"
+                            aria-hidden="true"
+                            data-mat-icon-type="font"
+                            >delete</mat-icon
+                          >
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <h3 class="form-hadding">
+              {{ "PRODUCT.SECTION_PRODUCT" | translate }}
+            </h3>
+          </div>
+          <hr />
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-12">
+                <div class="form-group input-fildcl">
+                  <label for="lname" class="control-label">{{
+                    "PRODUCT.PRODUCT_NAME" | translate
+                  }}</label>
+                  <div class="">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <mat-select
+                        placeholder="Select Product"
+                        [(ngModel)]="selectedProduct"
+                        [formControl]="addForm.controls['productName']"
+                      >
+                        <mat-option
+                          *ngFor="let item of productList"
+                          [value]="item?.productName"
+                          (click)="selectProductIDName(item)"
+                        >
+                          {{ item?.productName }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+              <!-- product price -->
+              <div class="col-md-3 col-sm-12">
+                <div class="form-group input-fildcl product-details-input">
+                  <label for="lname" class="control-label"
+                    >{{ "PURCHASE_ORDER.PRODUCT_PRICE" | translate }}
+                  </label>
+                  <div class="inpu-t product-details-input">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <input
+                        [formControl]="addForm.controls['productPrice']"
+                        type="number"
+                        matInput
+                        readonly
+                        placeholder="Ex : 1"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-12">
+                <div class="form-group input-fildcl">
+                  <label for="lname" class="control-label">
+                    {{ "PRODUCT.QUANTITY" | translate }}
+                  </label>
+                  <div class="">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <input
+                        matInput
+                        type="number"
+                        min="1"
+                        (keyup)="onKey($event)"
+                        [formControl]="addForm.controls['productQuantity']"
+                        placeholder="Quantity"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-12">
+                <div class="form-group input-fildcl">
+                  <label for="lname" class="control-label"
+                    >{{ "PURCHASE_ORDER.PRICE" | translate }}
+                  </label>
+                  <div class="inpu-t product-details-input">
+                    <mat-form-field appearance="outline" class="w-100">
+                      <input
+                        [formControl]="addForm.controls['purchasePrice']"
+                        type="number"
+                        matInput
+                        readonly
+                        placeholder="Ex : 1"
+                      />
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-12">
+                <div class="form-group input-fildcl">
+                  <div class="productadd-button">
+                    <button
+                      [disabled]="
+                        !addForm.value.productQuantity ||
+                        !addForm.value.productName
+                      "
+                      type="button"
+                      class="btn btn-outline-success table-add-button"
+                      (click)="addItem()"
+                    >
+                      add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 mt-3" *ngIf="productDataList.length">
+            <div class="main-div">
+              <div class="admin-table">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        {{ "PRODUCT.PRODUCT_NAME" | translate }}
+                      </th>
+                      <th scope="col">{{ "PRODUCT.QUANTITY" | translate }}</th>
+                      <th scope="col">{{ "PRODUCT.PRICE" | translate }}</th>
+                      <th scope="col">{{ "PLAN.ACTION" | translate }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let product of productDataList; let i = index">
+                      <td>{{ product?.name }}</td>
+                      <td>{{ product?.quantity }}</td>
+                      <td>{{ product?.price }}</td>
+                      <td>
+                        <button class="btn btn-red text-danger">
+                          <mat-icon
+                            role="img"
+                            class="mat-icon notranslate material-icons mat-icon-no-color"
+                            (click)="removeItem(i)"
+                            aria-hidden="true"
+                            data-mat-icon-type="font"
+                            >delete</mat-icon
+                          >
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end margin-y">
+            <button type="button" mat-raised-button routerBack>
+              {{ "COMMON.BUTTON.CANCEL" | translate }}
+            </button>
+            <button type="submit" mat-raised-button color="primary">
+              {{ "COMMON.BUTTON.SAVE" | translate }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <fullscreen-loading *ngIf="showLoader"></fullscreen-loading> -->

@@ -1,0 +1,31 @@
+<div class="delet-popup text-center">
+  <!-- Delete -->
+  <ng-container *ngIf="data?.isDelete">
+    <img src="assets/images/delete-icon.svg">
+    <h3>Are you sure you want to delete <br>{{data?.name}} ?</h3>
+    <div class="text-center">
+      <button (click)="onDelete()" class="blue-btn">{{'COMMON.BUTTON.DELETE' | translate}}</button>
+      <button class="blue-line-btn" (click)="close()" mat-button mat-dialog-close>Cancel</button>
+
+    </div>
+  </ng-container>
+
+   <!-- Is-Success Popup -->
+   <ng-container *ngIf="data?.isSuccess">
+    <img src="assets/images/successIcon.png">
+    <h3>Successfully Deleted</h3>
+    <div class="text-center">
+      <button class="blue-line-btn" (click)="close()" mat-button mat-dialog-close>{{'COMMON.BUTTON.OK' | translate}}</button>
+    </div>
+  </ng-container>
+
+  <!-- Suspend -->
+  <ng-container *ngIf="data?.isSuspend">
+    <img src="assets/images/errorIcon.png">
+    <h3>Are you sure you want to {{data?.suspendFlag ? 'suspend' : 'activate'}} <br>{{data?.name}} ?</h3>
+    <div class="text-center">
+      <button (click)="onDelete()" class="blue-btn">Yes</button>
+      <button class="blue-line-btn" (click)="close()" mat-button mat-dialog-close>Cancel</button>
+    </div>
+  </ng-container>
+</div>

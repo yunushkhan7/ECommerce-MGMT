@@ -1,0 +1,28 @@
+{
+  "LOGIN": {
+    "TITLE": "あなたのアカウントにログイン"
+  },
+  "SIDEBAR": {
+    "DASHBOARD": "ダッシュボード",
+    "ADMIN": "行政",
+    "USER":"ユーザー",
+    "ROLE":"役割",
+    "PRODUCTCATEGORY":"製品カテゴリ",
+    "COMPANY":"会社",
+    "TASK":"仕事",
+    "TASK_MANAGEMENT":"タスク管理",
+    "ANALYST_PRODUCT":"アナリスト製品",
+    "MARKETING":"マーケティング",
+    "VENDORS":"ベンダー/サプライヤー",
+    "PURCHASE_ORDER":"注文書",
+    "PRODUCT":"製品",
+    "SALES_ORDER":"販売注文",
+    "DELIVERY_PARTNER":"デリバリーパートナー",
+    "TENANT":"テナント",
+    "BUSINESSUNIT":"事業単位",
+    "EMPLOYEES":"従業員",
+    "CARDS":"カード",
+    "CONNECTS":"接続します",
+    "MYCARDS":"私のカード"
+  }
+}

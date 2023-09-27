@@ -1,0 +1,334 @@
+<mat-card class="side-navbar active-nav" id="sidebar" [class.full]="sidenavShow" [class.half]="!sidenavShow">
+  <div class="nav-logo" [class.w-0]="!sidenavShow">
+    <img src="../../../assets/images/login/nec.logo.png" routerLink="/dashboard" />
+  </div>
+  <div class="float-right">
+    <button class="btn_toggle mob" (click)="showSidebarMob()">
+      <mat-icon [class.icon_rotate]="!sidenavShow">keyboard_double_arrow_left</mat-icon>
+    </button>
+    <button class="btn_toggle" (click)="toggleShowSideBar()">
+      <mat-icon [class.icon_rotate]="!sidenavShow">keyboard_double_arrow_left</mat-icon>
+    </button>
+  </div>
+
+  <div class="ul_wrap">
+    <!-- Is CompanySelected -->
+    <ul *ngIf="isCompanySelected" class="side-menu">
+
+      <!-- dashboard Nav -->
+      <div class="nav-link">
+        <li class="dasboard-link" routerLink="/dashboard" routerLinkActive="active" (click)="showSidebarMob()">
+          <mat-icon>dashboard </mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.DASHBOARD'|translate}}</span>
+        </li>
+      </div>
+      <!-- dashboard Nav end-->
+
+      <!-- admin Nav -->
+      <div class="nav-link">
+        <li (click)="toggleAdmin()" routerLinkActive="active" class="bg-green-nav">
+          <mat-icon>person</mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.STAFF'|translate}}</span>
+          <mat-icon *ngIf="!isAdmin" class="ml-auto">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="isAdmin" class="ml-auto">keyboard_arrow_up</mat-icon>
+        </li>
+      </div>
+      <div *ngIf="isAdmin " class="nav-link sublink">
+        <li routerLink="/user" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.USER'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isAdmin " class="nav-link sublink">
+        <li routerLink="/role" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.ROLE'|translate}}</span>
+        </li>
+      </div>
+      <!-- admin Nav -->
+
+
+
+      <!-- Inventory Nav -->
+      <div class="nav-link">
+        <li (click)="toggleInventory()" routerLinkActive="active" class="bg-green-nav">
+          <mat-icon>speaker_notes</mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.INVENTORY'|translate}}</span>
+          <mat-icon *ngIf="!isInventory" class="ml-auto">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="isInventory" class="ml-auto">keyboard_arrow_up</mat-icon>
+        </li>
+      </div>
+      <div *ngIf="isInventory " class="nav-link sublink">
+        <li routerLink="/product" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.PRODUCT-INVE'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isInventory" class="nav-link sublink">
+        <li routerLink="/product-category" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.CATEGORY-INVE'|translate}}</span>
+        </li>
+      </div>
+      <!-- Inventory Nav end -->
+
+
+      <!-- Marketing/sales Nav -->
+      <div class="nav-link">
+        <li (click)="toggleMarketingSales()" routerLinkActive="active" class="bg-green-nav">
+          <mat-icon>monetization_on</mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.MARKETINGSALES'|translate}}</span>
+          <mat-icon *ngIf="!isMarketingSales" class="ml-auto">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="isMarketingSales" class="ml-auto">keyboard_arrow_up</mat-icon>
+        </li>
+      </div>
+      <!-- <div *ngIf="isMarketingSales " class="nav-link sublink">
+    <li  routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+      <div class="dot"></div>
+      <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.LEADSMARK'|translate}}</span>
+    </li>
+  </div> -->
+      <div *ngIf="isMarketingSales" class="nav-link sublink">
+        <li routerLink="/task" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.TASKMARK'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isMarketingSales" class="nav-link sublink">
+        <li routerLink="/task-management" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.TASK_MANAGEMENT'|translate}}</span>
+        </li>
+      </div>
+      <!-- <div *ngIf="isMarketingSales" class="nav-link sublink">
+    <li  routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+      <div class="dot"></div>
+      <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.CAMPAIGNMARK'|translate}}</span>
+    </li>
+  </div> -->
+      <!-- <div *ngIf="isMarketingSales" class="nav-link sublink">
+        <li routerLink="/marketing" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.MARKETING'|translate}}</span>
+        </li>
+      </div> -->
+      <!-- Marketing/sales Nav end -->
+
+
+      <!-- Dispatch Nav -->
+      <div class="nav-link">
+        <li (click)="toggleDispatch()" routerLinkActive="active" class="bg-green-nav">
+          <mat-icon>transfer_within_a_station</mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.DISPATCH'|translate}}</span>
+          <mat-icon *ngIf="!isDispatch" class="ml-auto">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="isDispatch" class="ml-auto">keyboard_arrow_up</mat-icon>
+        </li>
+      </div>
+      <!-- <div *ngIf="isDispatch" class="nav-link sublink">
+  <li  routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+    <div class="dot"></div>
+    <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.ORDERD'|translate}}</span>
+  </li>
+</div> -->
+      <div *ngIf="isDispatch" class="nav-link sublink">
+        <li routerLink="/sales-order" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.SALES_ORDER'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isDispatch" class="nav-link sublink">
+        <li routerLink="/purchase-order" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.PURCHASE_ORDER'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isDispatch" class="nav-link sublink">
+        <li routerLink="/delivery-partner" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.DELIVERYD'|translate}}</span>
+        </li>
+      </div>
+      <!-- Dispatch Nav end -->
+    </ul>
+    <!-- Is Not CompanySelected -->
+    <ul *ngIf="!isCompanySelected" class="side-menu">
+
+            <!-- dashboard Nav -->
+            <div class="nav-link">
+              <li class="dasboard-link" routerLink="/dashboard" routerLinkActive="active" (click)="showSidebarMob()">
+                <mat-icon>dashboard </mat-icon>
+                <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.DASHBOARD'|translate}}</span>
+              </li>
+            </div>
+            <!-- dashboard Nav end-->
+            
+      <!-- admin Nav -->
+      <div class="nav-link">
+        <li (click)="toggleAdmin()" routerLinkActive="active" class="bg-green-nav">
+          <mat-icon>person</mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.STAFF'|translate}}</span>
+          <mat-icon *ngIf="!isAdmin" class="ml-auto">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="isAdmin" class="ml-auto">keyboard_arrow_up</mat-icon>
+        </li>
+      </div>
+      <div *ngIf="isAdmin " class="nav-link sublink">
+        <li routerLink="/user" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.USER'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isAdmin " class="nav-link sublink">
+        <li routerLink="/role" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.ROLE'|translate}}</span>
+        </li>
+      </div>
+      <!-- admin Nav -->
+      <div class="nav-link">
+        <li routerLink="/company" routerLinkActive="active" (click)="showSidebarMob()">
+          <mat-icon>work </mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.COMPANY'|translate}}</span>
+        </li>
+      </div>
+
+       <!-- Company Nav -->
+       <div class="nav-link">
+        <li (click)="toggleCompany()" routerLinkActive="active" class="bg-green-nav">
+          <mat-icon>trending_up</mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.MARKET-ANALYSIS'|translate}}</span>
+          <mat-icon *ngIf="!isCompany" class="ml-auto">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="isCompany" class="ml-auto">keyboard_arrow_up</mat-icon>
+        </li>
+      </div>
+      <div *ngIf="isCompany " class="nav-link sublink">
+        <li routerLink="/vendors" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.VENDORS-MARKET'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isCompany " class="nav-link sublink">
+        <li routerLink="/analyst-product" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.ANALYST_PRODUCT'|translate}}</span>
+        </li>
+      </div>
+      <!-- Company Nav end -->
+
+      <!-- Procurement Nav -->
+      <div class="nav-link">
+        <li (click)="toggleProcurement()" routerLinkActive="active" class="bg-green-nav">
+          <mat-icon>add_shopping_cart</mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.PROCURMENET'|translate}}</span>
+          <mat-icon *ngIf="!isProcurement" class="ml-auto">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="isProcurement" class="ml-auto">keyboard_arrow_up</mat-icon>
+        </li>
+      </div>
+      <div *ngIf="isProcurement " class="nav-link sublink">
+        <li routerLink="/procurmenet-vendors" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.PROCUR_VENDORS'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isProcurement" class="nav-link sublink">
+        <li routerLink="/procurmenet-analyst-product" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.PROCUR_ANALYST_PRODUCT'|translate}}</span>
+        </li>
+      </div>
+      <!-- Procurement Nav end -->
+
+      <!-- Inventory Nav -->
+      <div class="nav-link">
+        <li (click)="toggleInventory()" routerLinkActive="active" class="bg-green-nav">
+          <mat-icon>speaker_notes</mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.INVENTORY'|translate}}</span>
+          <mat-icon *ngIf="!isInventory" class="ml-auto">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="isInventory" class="ml-auto">keyboard_arrow_up</mat-icon>
+        </li>
+      </div>
+      <div *ngIf="isInventory " class="nav-link sublink">
+        <li routerLink="/product" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.PRODUCT-INVE'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isInventory" class="nav-link sublink">
+        <li routerLink="/product-category" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.CATEGORY-INVE'|translate}}</span>
+        </li>
+      </div>
+      <!-- Inventory Nav end -->
+
+
+      <!-- Marketing/sales Nav -->
+      <div class="nav-link">
+        <li (click)="toggleMarketingSales()" routerLinkActive="active" class="bg-green-nav">
+          <mat-icon>monetization_on</mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.MARKETINGSALES'|translate}}</span>
+          <mat-icon *ngIf="!isMarketingSales" class="ml-auto">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="isMarketingSales" class="ml-auto">keyboard_arrow_up</mat-icon>
+        </li>
+      </div>
+
+      <div *ngIf="isMarketingSales" class="nav-link sublink">
+        <li routerLink="/task" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.TASKMARK'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isMarketingSales" class="nav-link sublink">
+        <li routerLink="/task-management" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.TASK_MANAGEMENT'|translate}}</span>
+        </li>
+      </div>
+      <!-- <div *ngIf="isMarketingSales" class="nav-link sublink">
+        <li routerLink="/marketing" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.MARKETING'|translate}}</span>
+        </li>
+      </div> -->
+      <!-- Marketing/sales Nav end -->
+
+
+      <!-- Dispatch Nav -->
+      <div class="nav-link">
+        <li (click)="toggleDispatch()" routerLinkActive="active" class="bg-green-nav">
+          <mat-icon>transfer_within_a_station</mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.DISPATCH'|translate}}</span>
+          <mat-icon *ngIf="!isDispatch" class="ml-auto">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="isDispatch" class="ml-auto">keyboard_arrow_up</mat-icon>
+        </li>
+      </div>
+
+      <div *ngIf="isDispatch" class="nav-link sublink">
+        <li routerLink="/sales-order" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.SALES_ORDER'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isDispatch" class="nav-link sublink">
+        <li routerLink="/purchase-order" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.PURCHASE_ORDER'|translate}}</span>
+        </li>
+      </div>
+      <div *ngIf="isDispatch" class="nav-link sublink">
+        <li routerLink="/delivery-partner" routerLinkActive="active" class="subnav_link" (click)="showSidebarMob()">
+          <div class="dot"></div>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.DELIVERYD'|translate}}</span>
+        </li>
+      </div>
+      <!-- Dispatch Nav end -->
+
+      <!-- REPORTS -->
+      <div class="nav-link">
+        <li routerLinkActive="active" routerLink="/report-dashboard" (click)="showSidebarMob()">
+          <mat-icon>data_usage </mat-icon>
+          <span class="mx-2" [class.none]="!sidenavShow">{{'SIDEBAR.REPORTS'|translate}}</span>
+        </li>
+      </div>
+    </ul>
+  </div>
+</mat-card>
